@@ -1,4 +1,4 @@
-const jugadores = require('./jugadores.json')
+const jugadores = require('../players.json')
 const baraja = require('./cartas.json')
 
 const estadoJuego = () => {

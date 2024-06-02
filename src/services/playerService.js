@@ -9,16 +9,19 @@ exports.showBeginning = (req, res) => {
     if (!fs.existsSync(filePlayers)) {
         const initialData = [];
         // Crea el archivo con un arreglo vacío si no existe
+        console.log("HOLA 2");
         fs.writeFileSync(filePlayers, JSON.stringify(initialData, null, 2), 'utf8');
+        console.log("HOLA 3");
         console.log("Archivo players.json creado.");
     }
-
+    console.log("HOLA 4");
     fs.readFile(filePlayers, 'utf8', (err, data) => {
         if (err) {
             console.log("Error leyendo el archivo players.json");
             res.status(500).send('Error leyendo el archivo');
             return;
         }
+
         let players = JSON.parse(data);
         const newPlayer = {
             id: players.length ? players[players.length - 1].id + 1 : 1,
@@ -26,7 +29,7 @@ exports.showBeginning = (req, res) => {
             cartas: [],
             cambios: 0
         };
-        players.push(newPlayer);
+        players.length < 4 ? players.push(newPlayer) : res.send("Máximo de jugadores alcanzado");
 
         fs.writeFile(filePlayers, JSON.stringify(players, null, 2), (err) => {
             if (err) {

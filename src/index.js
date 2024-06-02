@@ -4,7 +4,6 @@ const port = 3000;
 const gameService = require('./services/gameService.js')
 app.use(express.json())
 
-
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
@@ -38,13 +37,14 @@ fs.readFile(fileCards, 'utf8', (err, data) => {
 });
 
 // Importar el controlador
-const controller = require('./controllers/controller');
+const playerService = require('./services/playerService.js');
 
 app.use(bodyParser.json()); // Middleware para parsear JSON
 
 // Configurar la ruta
-app.post('/inicio', controller.showBeginning);
-app.get('/cartas/:id',controller.getCards);
+app.post('/inicio', playerService.showBeginning);
+
+app.get('/cartas/:id',playerService.getCards);
 
 app.get('/jugadores', (req, res) => { 
     const jugadores = gameService.getJugadores()
@@ -70,9 +70,6 @@ app.get('/cartaAleatoria', (req, res) => {
     const carta = gameService.getCartaAleatoria()
     res.send(carta)
 })
-
-
-
 
 app.listen(port, () => {
     console.log(`Server escuchando en el puerto: ${port}`);
