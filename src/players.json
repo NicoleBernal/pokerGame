@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "NombreDelJugador",
+    "cartas": [
+      {
+        "id": 25,
+        "valor": "7",
+        "palo": "trebol",
+        "disponibilidad": false
+      },
+      {
+        "id": 31,
+        "valor": "8",
+        "palo": "corazon",
+        "disponibilidad": false
+      },
+      {
+        "id": 27,
+        "valor": "7",
+        "palo": "corazon",
+        "disponibilidad": false
+      },
+      {
+        "id": 8,
+        "valor": "2",
+        "palo": "picas",
+        "disponibilidad": false
+      },
+      {
+        "id": 21,
+        "valor": "6",
+        "palo": "trebol",
+        "disponibilidad": false
+      },
+      {
+        "id": 4,
+        "valor": "A",
+        "palo": "picas",
+        "disponibilidad": false
+      }
+    ],
+    "cambios": 0
+  },
+  {
+    "id": 2,
+    "name": "Nicole",
+    "cartas": [],
+    "cambios": 0
+  }
+]
