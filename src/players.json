@@ -1,12 +1,18 @@
 [
   {
     "id": 1,
-    "name": "NombreDelJugador",
+    "name": "Luis",
     "cartas": [
       {
-        "id": 25,
-        "valor": "7",
-        "palo": "trebol",
+        "id": 39,
+        "valor": "10",
+        "palo": "corazon",
+        "disponibilidad": false
+      },
+      {
+        "id": 11,
+        "valor": "3",
+        "palo": "corazon",
         "disponibilidad": false
       },
       {
@@ -16,15 +22,95 @@
         "disponibilidad": false
       },
       {
-        "id": 27,
-        "valor": "7",
+        "id": 14,
+        "valor": "4",
+        "palo": "diamante",
+        "disponibilidad": false
+      },
+      {
+        "id": 10,
+        "valor": "3",
+        "palo": "diamante",
+        "disponibilidad": false
+      },
+      {
+        "id": 13,
+        "valor": "4",
+        "palo": "trebol",
+        "disponibilidad": false
+      }
+    ],
+    "cambios": 0
+  },
+  {
+    "id": 2,
+    "name": "Mia",
+    "cartas": [
+      {
+        "id": 33,
+        "valor": "9",
+        "palo": "trebol",
+        "disponibilidad": false
+      },
+      {
+        "id": 41,
+        "valor": "J",
+        "palo": "trebol",
+        "disponibilidad": false
+      },
+      {
+        "id": 5,
+        "valor": "2",
+        "palo": "trebol",
+        "disponibilidad": false
+      },
+      {
+        "id": 1,
+        "valor": "A",
+        "palo": "trebol",
+        "disponibilidad": false
+      },
+      {
+        "id": 42,
+        "valor": "J",
+        "palo": "diamante",
+        "disponibilidad": false
+      },
+      {
+        "id": 7,
+        "valor": "2",
+        "palo": "corazon",
+        "disponibilidad": false
+      }
+    ],
+    "cambios": 0
+  },
+  {
+    "id": 3,
+    "name": "Loui",
+    "cartas": [
+      {
+        "id": 48,
+        "valor": "Q",
+        "palo": "picas",
+        "disponibilidad": false
+      },
+      {
+        "id": 37,
+        "valor": "10",
+        "palo": "trebol",
+        "disponibilidad": false
+      },
+      {
+        "id": 51,
+        "valor": "K",
         "palo": "corazon",
         "disponibilidad": false
       },
       {
-        "id": 8,
-        "valor": "2",
-        "palo": "picas",
+        "id": 38,
+        "valor": "10",
+        "palo": "diamante",
         "disponibilidad": false
       },
       {
@@ -34,67 +120,55 @@
         "disponibilidad": false
       },
       {
-        "id": 4,
-        "valor": "A",
-        "palo": "picas",
-        "disponibilidad": false
-      }
-    ],
-    "cambios": 0
-  },
-  {
-    "id": 2,
-    "name": "Nicole",
-    "cartas": [
-      {
-        "id": 16,
+        "id": 15,
         "valor": "4",
-        "palo": "picas",
-        "disponibilidad": false
-      },
-      {
-        "id": 17,
-        "valor": "5",
-        "palo": "trebol",
-        "disponibilidad": false
-      },
-      {
-        "id": 47,
-        "valor": "Q",
         "palo": "corazon",
         "disponibilidad": false
-      },
-      {
-        "id": 44,
-        "valor": "J",
-        "palo": "picas",
-        "disponibilidad": false
-      },
-      {
-        "id": 45,
-        "valor": "Q",
-        "palo": "trebol",
-        "disponibilidad": false
-      },
-      {
-        "id": 32,
-        "valor": "8",
-        "palo": "picas",
-        "disponibilidad": false
       }
     ],
-    "cambios": 0
-  },
-  {
-    "id": 3,
-    "name": "Juan",
-    "cartas": [],
     "cambios": 0
   },
   {
     "id": 4,
-    "name": "Rosio",
-    "cartas": [],
+    "name": "Marti",
+    "cartas": [
+      {
+        "id": 9,
+        "valor": "3",
+        "palo": "trebol",
+        "disponibilidad": false
+      },
+      {
+        "id": 4,
+        "valor": "A",
+        "palo": "picas",
+        "disponibilidad": false
+      },
+      {
+        "id": 34,
+        "valor": "9",
+        "palo": "diamante",
+        "disponibilidad": false
+      },
+      {
+        "id": 46,
+        "valor": "Q",
+        "palo": "diamante",
+        "disponibilidad": false
+      },
+      {
+        "id": 40,
+        "valor": "10",
+        "palo": "picas",
+        "disponibilidad": false
+      },
+      {
+        "id": 24,
+        "valor": "6",
+        "palo": "picas",
+        "disponibilidad": false
+      }
+    ],
     "cambios": 0
   }
 ]

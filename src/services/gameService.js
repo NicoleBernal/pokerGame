@@ -1,6 +1,8 @@
 const pokerSolver  = require('./pokerSolver.js') 
-const baraja = require('../cards.json')
-const jugadores = require('../players.json')
+const fs = require('fs');
+const path = require('path');
+const jugadores = path.join(__dirname, '../players.json');
+const baraja = path.join(__dirname, '../cards.json');
 
 const estadoJuego = () => {
     const cantidadJugadores = jugadores.length

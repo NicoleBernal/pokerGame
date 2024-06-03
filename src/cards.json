@@ -21,13 +21,13 @@
     "id": 4,
     "valor": "A",
     "palo": "picas",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 5,
     "valor": "2",
     "palo": "trebol",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "id": 8,
     "valor": "2",
     "palo": "picas",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 9,
@@ -87,25 +87,25 @@
     "id": 15,
     "valor": "4",
     "palo": "corazon",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 16,
     "valor": "4",
     "palo": "picas",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 17,
     "valor": "5",
     "palo": "trebol",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 18,
     "valor": "5",
     "palo": "diamante",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 19,
@@ -123,13 +123,13 @@
     "id": 21,
     "valor": "6",
     "palo": "trebol",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 22,
     "valor": "6",
     "palo": "diamante",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 23,
@@ -147,7 +147,7 @@
     "id": 25,
     "valor": "7",
     "palo": "trebol",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 26,
@@ -159,7 +159,7 @@
     "id": 27,
     "valor": "7",
     "palo": "corazon",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 28,
@@ -183,13 +183,13 @@
     "id": 31,
     "valor": "8",
     "palo": "corazon",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 32,
     "valor": "8",
     "palo": "picas",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 33,
@@ -201,7 +201,7 @@
     "id": 34,
     "valor": "9",
     "palo": "diamante",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 35,
@@ -219,7 +219,7 @@
     "id": 37,
     "valor": "10",
     "palo": "trebol",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 38,
@@ -261,13 +261,13 @@
     "id": 44,
     "valor": "J",
     "palo": "picas",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 45,
     "valor": "Q",
     "palo": "trebol",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 46,
@@ -279,7 +279,7 @@
     "id": 47,
     "valor": "Q",
     "palo": "corazon",
-    "disponibilidad": false
+    "disponibilidad": true
   },
   {
     "id": 48,
