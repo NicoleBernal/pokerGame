@@ -11,7 +11,7 @@ const estadoJuego = () => {
 
         const cambiosRealizados = jugadores.map(jugador => {
             return {
-                nombre: jugador.nombre,
+                nombre: jugador.name,
                 cambios: jugador.cambios
             }
         })
@@ -37,23 +37,30 @@ const getGanador = () => {
         return max.puntaje > jugador.puntaje ? max : jugador
     })
     console.log(ganador)
-    return ganador.nombre + " con " + ganador.puntaje
+    return ganador.name + " con " + ganador.puntaje
 }
 
 
 
 const realizarCambios = (id, cartas) => {
+
+    if (cartas === undefined) {
+        const jugador = jugadores.find(jugador => jugador.id === id)
+        jugador.cambios += 1;
+        return "No se cambió ninguna carta"
+    } else {
     
-    const cambiosCompletos = getCambiosJugador(id) === 2 ? true : false
-    if (cambiosCompletos === true) {
-        return "Ya has hecho todos los cambios"
-    }
-    else if (cartas.length > 3) {
-        return "Debes cambiar 3 cartas"
-    }
-    else {
-        cambiarCartas(id, cartas)
-        return "Cambio realizado"
+        const cambiosCompletos = getCambiosJugador(id) === 2 ? true : false
+        if (cambiosCompletos === true) {
+            return "Ya has hecho todos los cambios"
+        }
+        else if (cartas.length > 3) {
+            return "Debes cambiar 3 cartas"
+        }
+        else {
+            cambiarCartas(id, cartas)
+            return "Cambio realizado"
+        }
     }
 }
 
