@@ -1,12 +1,10 @@
-const pokerSolver  = require('./pokerSolver.js') 
-const fs = require('fs');
-const path = require('path');
-const jugadores = path.join(__dirname, '../players.json');
-const baraja = path.join(__dirname, '../cards.json');
+const pokerSolver = require('./pokerSolver.js')
+const jugadores = require('../players.json');
+const baraja = require('../cards.json');
 
 const estadoJuego = () => {
     const cantidadJugadores = jugadores.length
-    console.log(cantidadJugadores)
+   
     if (cantidadJugadores < 4) {
         return "esperando jugadores"
     } else if (cantidadJugadores === 4) {
@@ -30,7 +28,7 @@ const estadoJuego = () => {
 const getGanador = () => {
     const puntajes = jugadores.map(jugador => {
         return {
-            nombre: jugador.nombre,
+            name: jugador.name,
             puntaje: pokerSolver(jugador.cartas.sort((a, b) => a.valor - b.valor))
         }
     })
@@ -45,23 +43,28 @@ const getGanador = () => {
 
 
 const realizarCambios = (id, cartas) => {
-
-    if (cartas === undefined) {
-        const jugador = jugadores.find(jugador => jugador.id === id)
-        jugador.cambios += 1;
-        return "No se cambió ninguna carta"
-    } else {
     
+    const jugador = jugadores.find(jugador => jugador.id === id)
+    if (jugador === undefined) {
+        return "El jugador no valido"
+    } else {
         const cambiosCompletos = getCambiosJugador(id) === 2 ? true : false
-        if (cambiosCompletos === true) {
-            return "Ya has hecho todos los cambios"
-        }
-        else if (cartas.length > 3) {
-            return "Debes cambiar 3 cartas"
-        }
-        else {
-            cambiarCartas(id, cartas)
-            return "Cambio realizado"
+        if (cartas === undefined) {
+        
+            if (!cambiosCompletos) {
+                jugador.cambios += 1
+                return "No se cambió ninguna carta"
+            } else {
+                return "Ya has hecho todos los cambios"
+            }
+        
+        } else {
+            if (cartas.length > 3) {
+                return "Debes cambiar 3 o menos cartas"
+            }
+            else {
+                return cambiarCartas(id, cartas)
+            }
         }
     }
 }
@@ -69,7 +72,7 @@ const realizarCambios = (id, cartas) => {
 
 const cambiarCartas = (id, cartas) => {
     if (cartas.length > 0 && cartas.length <= 3) {
-        console.log("1")
+       
         const nuevasCartas = [];
         const jugador = jugadores.find(jugador => jugador.id === id)
 
@@ -77,7 +80,7 @@ const cambiarCartas = (id, cartas) => {
             const nuevaCarta = getCartaAleatoria();
 
             nuevasCartas.push(nuevaCarta);
-            console.log("2")
+           
 
             let indexCarta = jugador.cartas.findIndex(carta => carta.id === cartas[i].id);
             
@@ -97,7 +100,6 @@ const cambiarCartas = (id, cartas) => {
         });
 
         jugador.cambios += 1;
-        console.log("8")
         return nuevasCartas
     } else {
         return "Debes cambiar 3 cartas"
