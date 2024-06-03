@@ -9,12 +9,24 @@ exports.showBeginning = (req, res) => {
 
     // Crear archivo players.json si no existe
     if (!fs.existsSync(filePlayers)) {
+<<<<<<< HEAD
         fs.writeFileSync(filePlayers, JSON.stringify([], null, 2), 'utf8');
         console.log("Archivo players.json creado.");
     }
 
     // Leer archivo players.json
     fs.readFile(filePlayers, 'utf8', (err, playerData) => {
+=======
+        const initialData = [];
+        // Crea el archivo con un arreglo vacío si no existe
+    
+        fs.writeFileSync(filePlayers, JSON.stringify(initialData, null, 2), 'utf8');
+       
+        console.log("Archivo players.json creado.");
+    }
+   
+    fs.readFile(filePlayers, 'utf8', (err, data) => {
+>>>>>>> 5963a00c2df562890ca726bc559e6d32e36f6293
         if (err) {
             console.log("Error leyendo el archivo players.json");
             res.status(500).send('Error leyendo el archivo');
