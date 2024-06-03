@@ -1,6 +1,6 @@
 const pokerSolver  = require('./pokerSolver.js') 
-const jugadores = require('./jugadores.json')
 const baraja = require('../cards.json')
+const jugadores = require('../players.json')
 
 const estadoJuego = () => {
     const cantidadJugadores = jugadores.length

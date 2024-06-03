@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "name": "NombreDelJugador",
+    "cartas": [
+      {
+        "id": 25,
+        "valor": "7",
+        "palo": "trebol",
+        "disponibilidad": false
+      },
+      {
+        "id": 31,
+        "valor": "8",
+        "palo": "corazon",
+        "disponibilidad": false
+      },
+      {
+        "id": 27,
+        "valor": "7",
+        "palo": "corazon",
+        "disponibilidad": false
+      },
+      {
+        "id": 8,
+        "valor": "2",
+        "palo": "picas",
+        "disponibilidad": false
+      },
+      {
+        "id": 21,
+        "valor": "6",
+        "palo": "trebol",
+        "disponibilidad": false
+      },
+      {
+        "id": 4,
+        "valor": "A",
+        "palo": "picas",
+        "disponibilidad": false
+      }
+    ],
+    "cambios": 0
+  },
+  {
+    "id": 2,
+    "name": "Nicole",
+    "cartas": [
+      {
+        "id": 16,
+        "valor": "4",
+        "palo": "picas",
+        "disponibilidad": false
+      },
+      {
+        "id": 17,
+        "valor": "5",
+        "palo": "trebol",
+        "disponibilidad": false
+      },
+      {
+        "id": 47,
+        "valor": "Q",
+        "palo": "corazon",
+        "disponibilidad": false
+      },
+      {
+        "id": 44,
+        "valor": "J",
+        "palo": "picas",
+        "disponibilidad": false
+      },
+      {
+        "id": 45,
+        "valor": "Q",
+        "palo": "trebol",
+        "disponibilidad": false
+      },
+      {
+        "id": 32,
+        "valor": "8",
+        "palo": "picas",
+        "disponibilidad": false
+      }
+    ],
+    "cambios": 0
+  },
+  {
+    "id": 3,
+    "name": "Juan",
+    "cartas": [],
+    "cambios": 0
+  },
+  {
+    "id": 4,
+    "name": "Rosio",
+    "cartas": [],
+    "cambios": 0
+  }
+]
