@@ -1,7 +1,6 @@
 const pokerSolver  = require('./pokerSolver.js') 
 const jugadores = require('./jugadores.json')
-const baraja = require('./cartas.json')
-const baraja1 = require('../cards.json')
+const baraja = require('../cards.json')
 
 const estadoJuego = () => {
     const cantidadJugadores = jugadores.length
@@ -77,12 +76,12 @@ const cambiarCartas = (id, cartas) => {
                 jugador.cartas[indexCarta].id = nuevaCarta.id;
                 jugador.cartas[indexCarta].palo = nuevaCarta.palo;
                 jugador.cartas[indexCarta].valor = nuevaCarta.valor;
-                baraja1.find(carta => carta.id === nuevaCarta.id).disponibilidad = false;
+                baraja.find(carta => carta.id === nuevaCarta.id).disponibilidad = false;
             }
         }
 
         cartas.forEach(carta => {
-            const cartaEnBaraja = baraja1.find(c => c.id === carta.id);
+            const cartaEnBaraja = baraja.find(c => c.id === carta.id);
             if (cartaEnBaraja) {
                 cartaEnBaraja.disponibilidad = true;
             }
@@ -100,8 +99,8 @@ const cambiarCartas = (id, cartas) => {
 const getCartaAleatoria = () => {
     let cartaAleatoria;
     do {
-        const idAleatorio = Math.floor(Math.random() * baraja1.length) + 1;
-        cartaAleatoria = baraja1.find(carta => carta.id === idAleatorio);
+        const idAleatorio = Math.floor(Math.random() * baraja.length) + 1;
+        cartaAleatoria = baraja.find(carta => carta.id === idAleatorio);
     } while (!cartaAleatoria.disponibilidad);
     
     return cartaAleatoria;
