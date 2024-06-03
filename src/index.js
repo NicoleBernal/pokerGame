@@ -13,11 +13,19 @@ app.get('/jugadores', (req, res) => {
 
 app.post('/cambiar', (req, res) => {
     const id = req.body.id
-    const cartas = req.body.cartas
-    console.log(cartas)
+    
+    if (req.body.cartas === undefined) {
+        res.send("No se cambió ninguna carta")
+    } else {
+        const cartas = req.body.cartas
+        const cambios = gameService.realizarCambios(id, cartas)
+        res.send(cambios)
+    }
    
-    console.log(gameService.realizarCambios(id, cartas))
-    res.send("cartas cambiado")
+})
+
+app.get('/', (req, res) => {
+    res.send('Hello World!')
 })
 
 app.get('/estado', (req, res) => { 

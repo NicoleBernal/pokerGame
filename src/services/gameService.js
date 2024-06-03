@@ -1,5 +1,7 @@
+const pokerSolver  = require('./pokerSolver.js') 
 const jugadores = require('./jugadores.json')
 const baraja = require('./cartas.json')
+const baraja1 = require('../cards.json')
 
 const estadoJuego = () => {
     const cantidadJugadores = jugadores.length
@@ -16,51 +18,78 @@ const estadoJuego = () => {
         })
         const todosHanHechoDosCambios = cambiosRealizados.every(jugador => jugador.cambios === 2);
         if (todosHanHechoDosCambios) {
-            return "juego finalizado"
+            console.log("el ganador")
+            return `El juego ha finalizado, el ganador es ${getGanador()}`
         } else {
             return cambiosRealizados
         }
     }
 }
 
+const getGanador = () => {
+    const puntajes = jugadores.map(jugador => {
+        return {
+            nombre: jugador.nombre,
+            puntaje: pokerSolver(jugador.cartas.sort((a, b) => a.valor - b.valor))
+        }
+    })
+    console.log(puntajes)
+    const ganador = puntajes.reduce((max, jugador) => {
+        return max.puntaje > jugador.puntaje ? max : jugador
+    })
+    console.log(ganador)
+    return ganador.nombre + " con " + ganador.puntaje
+}
+
+
+
 const realizarCambios = (id, cartas) => {
+    
     const cambiosCompletos = getCambiosJugador(id) === 2 ? true : false
     if (cambiosCompletos === true) {
         return "Ya has hecho todos los cambios"
-    } else {
+    }
+    else if (cartas.length > 3) {
+        return "Debes cambiar 3 cartas"
+    }
+    else {
         cambiarCartas(id, cartas)
-
-        const jugador = jugadores.find(jugador => jugador.id === id)
-        jugador.cambios = jugador.cambios + 1
-        return "Cambio realizado" 
+        return "Cambio realizado"
     }
 }
 
 
 const cambiarCartas = (id, cartas) => {
     if (cartas.length > 0 && cartas.length <= 3) {
+        console.log("1")
         const nuevasCartas = [];
         const jugador = jugadores.find(jugador => jugador.id === id)
+
         for (let i = 0; i < cartas.length; i++) { 
-            const nuevaCarta = getCartaAleatoria()
+            const nuevaCarta = getCartaAleatoria();
 
-            nuevasCartas.push(nuevaCarta)
-            console.log(nuevaCarta)
+            nuevasCartas.push(nuevaCarta);
+            console.log("2")
 
-            const index = jugador.cartas.findIndex(carta => carta.valor === cartas[i].valor && carta.palo === cartas[i].palo);
-            jugador.cartas[index].palo = nuevaCarta.palo
-            jugador.cartas[index].valor = nuevaCarta.valor
-
-            const indexBaraja = baraja.findIndex(carta => carta.valor === nuevaCarta.valor && carta.palo === nuevaCarta.palo);
-            baraja[indexBaraja].disponible = false;
+            let indexCarta = jugador.cartas.findIndex(carta => carta.id === cartas[i].id);
+            
+            if (indexCarta !== -1) {
+                jugador.cartas[indexCarta].id = nuevaCarta.id;
+                jugador.cartas[indexCarta].palo = nuevaCarta.palo;
+                jugador.cartas[indexCarta].valor = nuevaCarta.valor;
+                baraja1.find(carta => carta.id === nuevaCarta.id).disponibilidad = false;
+            }
         }
 
         cartas.forEach(carta => {
-            const indexBaraja = baraja.findIndex(cartaBaraja => cartaBaraja.valor === carta.valor && cartaBaraja.palo === carta.palo);
-            baraja[indexBaraja].disponible = true;
-        }) 
-        console.log(nuevasCartas)
-        console.log(jugador.cartas)
+            const cartaEnBaraja = baraja1.find(c => c.id === carta.id);
+            if (cartaEnBaraja) {
+                cartaEnBaraja.disponibilidad = true;
+            }
+        });
+
+        jugador.cambios += 1;
+        console.log("8")
         return nuevasCartas
     } else {
         return "Debes cambiar 3 cartas"
@@ -69,15 +98,13 @@ const cambiarCartas = (id, cartas) => {
 }
 
 const getCartaAleatoria = () => {
-    let randomIndex;
-    let carta;
-    
+    let cartaAleatoria;
     do {
-        randomIndex = Math.floor(Math.random() * baraja.length);
-        carta = baraja[randomIndex];
-    } while (!carta.disponible);
-
-    return carta;
+        const idAleatorio = Math.floor(Math.random() * baraja1.length) + 1;
+        cartaAleatoria = baraja1.find(carta => carta.id === idAleatorio);
+    } while (!cartaAleatoria.disponibilidad);
+    
+    return cartaAleatoria;
 }
 
 const getCambiosJugador = (id) => {
@@ -86,6 +113,6 @@ const getCambiosJugador = (id) => {
 }
 
 const getJugadores = () => {
-    return jugadores;
+    return jugadores
 };
 module.exports = { estadoJuego, realizarCambios, getJugadores, getCartaAleatoria };
