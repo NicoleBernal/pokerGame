@@ -16,3 +16,7 @@ package.json
 *.json
 
 test
+
+\src\players.json
+\src\services\player.js
+
